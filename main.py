@@ -16,7 +16,6 @@ class npEncoder(json.JSONEncoder):
     else:
       return super(npEncoder, self).default(obj)
 
-
 class ReadData():
   def __init__(self, courses_filename, students_filename, tests_filename, marks_filename):
     self.filenames = [courses_filename, students_filename, tests_filename, marks_filename]
@@ -31,7 +30,6 @@ class ReadData():
       except Exception:
         print("Error Reading from file: " + filename)
     return (self.all_data[0], self.all_data[1], self.all_data[2], self.all_data[3])
-
 
 class CheckData():
   def __init__(self, tests_data):
@@ -55,7 +53,6 @@ class CheckData():
     if total_weights != 100:
       return 1
     return 0
-
 
 class ProcessData():
   def __init__(self, courses_data, students_data, tests_data, marks_data):
@@ -134,7 +131,6 @@ class ProcessData():
     courses_list, courses_avg_list = self.info_per_student_per_course(weighted_marks, course_id,
                                                                       courses_list, courses_avg_list)
     students_list = self.info_per_student(student_id, courses_list, students_list, courses_avg_list)
-
     return students_list
 
 
